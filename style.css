@@ -1,4 +1,30 @@
-
+.loading{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .circle{
+        width: 80px;
+        height: 80px;
+        border: 5px solid grey;
+        border-top: 5px solid black;
+        border-radius: 50%;
+        animation: circle 3s linear infinite;
+    }
+}
+@keyframes circle{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+}
+.content{
+    display: none;
+}
 .proposal{
     background-image: url(https://cliply.co/wp-content/uploads/2020/01/402001120_PAPER_HEARTS_400px.gif);
     background-repeat: no-repeat;

@@ -1,3 +1,7 @@
+window.onload = function(){
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".content").style.display = "block";
+}
 const YesBtn = document.querySelector(".Yes");
 const NoBtn = document.querySelector(".No");
 const Reconsider = document.querySelector(".Reconsider");
