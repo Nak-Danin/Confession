@@ -11,12 +11,20 @@ const Disagree = document.querySelector(".disagreeCartoon");
 const happiAudio = document.querySelector(".happiAudio");
 const sadAudio = document.querySelector(".sadAudio");
 const Back = document.querySelector(".Goback");
+function logReaction(reactionType){
+    fetch('/api/reaction', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reaction: reactionType })
+    });
+}
 
 YesBtn.addEventListener("click", ()=>{
     Agree.style.display = "block";
     Proposal.style.display = "none";
     happiAudio.play();  
     happiAudio.muted = false;
+    logReaction("Yes");
 })
 
 Back.addEventListener("click",()=>{
@@ -30,6 +38,7 @@ NoBtn.addEventListener("click",()=>{
     Proposal.style.display = "none";
     happiAudio.pause();
     sadAudio.play();
+    logReaction("No");
 })
 
 Reconsider.addEventListener("click",()=>{
